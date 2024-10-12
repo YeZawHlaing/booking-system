@@ -19,10 +19,15 @@ public class Room {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long room_id;
 
+
     @Column(name = "room_number")
     private int room_number;
 
     @Column(name = "status")
     private boolean status;
+
+    @ManyToOne(fetch = FetchType.LAZY , cascade = CascadeType.PERSIST)
+    @JoinColumn( name = "RoomType" , referencedColumnName = "RoomType")
+    private Category category;
 
 }
