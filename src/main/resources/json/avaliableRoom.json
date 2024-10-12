@@ -1,0 +1,12 @@
+[
+  {
+    "room_id": 1,
+    "room_number": 201,
+    "status": true
+  },
+  {
+    "room_id": 2,
+    "room_number": 200,
+    "status": false
+  }
+]
