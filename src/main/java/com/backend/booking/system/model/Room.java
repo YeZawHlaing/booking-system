@@ -16,11 +16,7 @@ import lombok.Setter;
 public class Room {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long room_id;
-
-
-    @Column(name = "room_number")
+    @Column(name = "room_number", nullable = false, unique = true)
     private int room_number;
 
     @Column(name = "status")

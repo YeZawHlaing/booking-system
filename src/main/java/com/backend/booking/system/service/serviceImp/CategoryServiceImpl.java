@@ -15,46 +15,12 @@ import java.util.List;
 @RequiredArgsConstructor
 public class CategoryServiceImpl implements CategoryService {
 
-//    @Autowired
-//    private final BookRepository bookRepository;
 
 
-//    @Override
-//    public Book createBooks(Book books) {
-//      return bookRepository.save(books);
-//    }
-//
-//    @Override
-//    public List<Book> getAllBooks() {
-//        return bookRepository.findAll();
-//    }
-//
-//    @Override
-//    public Book updateBooks(Book book, Long id) {
-//        Book is_exist=bookRepository.findById(id).orElseThrow(() -> new RuntimeException("Not Found"));
-//        is_exist.setTitle(book.getTitle());
-//        is_exist.setPrice(book.getPrice());
-//        bookRepository.save(is_exist);
-//
-//        return is_exist;
-//    }
-//
-//    @Override
-//    public Book deleteBooks(Long id) {
-//        Book is_exist=bookRepository.findById(id).orElseThrow(() -> new RuntimeException("Not Found"));
-//        bookRepository.deleteById(id);
-//        return is_exist;
-//    }
-
-    @Value("${image-storage-directory}")
-    private String imageStorageDirectory;
     @Autowired
     private final CategoryRepository cat_repository;
 
-    public CategoryServiceImpl(String imageStorageDirectory, CategoryRepository catRepository) {
-        this.imageStorageDirectory = imageStorageDirectory;
-        cat_repository = catRepository;
-    }
+
 
 //    @Override
 //    public Category createCategory(CategoryDTO cdto) {

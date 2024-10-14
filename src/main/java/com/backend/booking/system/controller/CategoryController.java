@@ -23,12 +23,6 @@ public class CategoryController {
 
 
 
-    @PostMapping("/upload")
-    public ResponseEntity<Category> createCategory(@RequestBody Category c) {
-        Category savedCategory = Cat_Service.createCategory(c);
-        return new ResponseEntity<>(savedCategory, HttpStatus.CREATED);
-    }
-
     @GetMapping("/getCategory")
     public List<Category> getAllCategory(){
         return Cat_Service.getAllCategorys();
@@ -46,13 +40,7 @@ public class CategoryController {
         return new ResponseEntity<>(deleteCategory,HttpStatus.OK);
     }
 
-    @PostMapping("/upload")
-    public ResponseEntity<Category> uploadImage(@RequestParam("image") MultipartFile file) throws IOException {
-        byte[] bytes = file.getBytes();
-        // Save bytes to database here
-       // return ResponseEntity.status(HttpStatus.OK).body("Image uploaded successfully");
-        return new ResponseEntity<>(HttpStatus.OK);
-    }
+
 
 
 }

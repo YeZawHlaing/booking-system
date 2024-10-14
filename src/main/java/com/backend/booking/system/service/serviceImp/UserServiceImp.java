@@ -9,20 +9,19 @@ import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.mindrot.jbcrypt.BCrypt;
 import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 import java.util.List;
-import java.util.Optional;
+
 import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
 public class UserServiceImp implements UserService {
 
-    private final UserRepository userRepository;
 
-    private final EntityMapper entityMapper;
+    private final UserRepository userRepository;
     private final ModelMapper modelMapper;
 
 
@@ -39,19 +38,6 @@ public class UserServiceImp implements UserService {
         userRepository.save(user);
 
     }
-
-    @Override
-    public void bulkCreateUser(List<UserDto> userDTO) {
-
-        List<User> users =
-                userDTO.stream()
-                        .map(dto -> entityMapper.mapDTOtoEntity(dto, new User()))
-                        .collect(Collectors.toList());
-        userRepository.saveAll(users);
-
-
-    }
-
 
 
     @Override

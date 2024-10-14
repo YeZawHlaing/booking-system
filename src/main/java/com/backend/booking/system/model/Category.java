@@ -13,12 +13,7 @@ import lombok.*;
 public class Category {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-
-    @ManyToOne
-    @JoinColumn(name = "RoomType")
-    @Column(name = "RoomType")
+    @Column(name = "RoomType", nullable = false, unique = true)
     private String RoomType;
 
     @Column(name ="image")

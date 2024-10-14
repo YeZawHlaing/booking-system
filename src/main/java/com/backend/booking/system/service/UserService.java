@@ -7,7 +7,7 @@ import java.util.List;
 public interface UserService {
 
     void createUser(UserDto userDTO);
-    void bulkCreateUser(List<UserDto> userDTO);
+
 
     void deleteUser(String email);
 
