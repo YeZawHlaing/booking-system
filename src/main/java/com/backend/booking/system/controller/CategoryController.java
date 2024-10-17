@@ -28,13 +28,13 @@ public class CategoryController {
         return Cat_Service.getAllCategorys();
     }
 
-    @PutMapping("/updateBook")
+    @PutMapping("/updateCategory")
     public ResponseEntity<Category> updateCategory(@RequestParam (name = "id") long id, @RequestBody Category c){
         Category updateCategory=Cat_Service.updateCategory(c,id);
         return new ResponseEntity<>(updateCategory, HttpStatus.OK);
     }
 
-    @DeleteMapping("/deleteBook")
+    @DeleteMapping("/deleteCategory")
     public ResponseEntity<Category> deleteBook(@RequestParam (name = "id") long id){
         Category deleteCategory=Cat_Service.deleteCategory(id);
         return new ResponseEntity<>(deleteCategory,HttpStatus.OK);

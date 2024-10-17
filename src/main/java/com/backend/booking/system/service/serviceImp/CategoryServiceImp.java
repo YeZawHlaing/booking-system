@@ -3,17 +3,15 @@ package com.backend.booking.system.service.serviceImp;
 import com.backend.booking.system.model.Category;
 import com.backend.booking.system.repository.CategoryRepository;
 import com.backend.booking.system.service.CategoryService;
-import jakarta.persistence.OneToMany;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class CategoryServiceImpl implements CategoryService {
+public class CategoryServiceImp implements CategoryService {
 
 
 
@@ -61,7 +59,7 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public Category createCategory(Category c) {
-        return null;
+        return cat_repository.save(c);
     }
 
        // @OneToMany

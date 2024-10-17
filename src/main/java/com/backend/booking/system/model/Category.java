@@ -17,7 +17,7 @@ public class Category {
     private String RoomType;
 
     @Column(name ="image")
-    private byte image;
+    private String image;
 
 
     @Column(name = "price")
